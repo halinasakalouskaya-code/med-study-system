@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chémia – Disperzné sústavy – Test</title>
+<style>
+body{font-family:Arial;text-align:center;padding:30px;background:#f0f4f8;}
+.card{background:white;padding:20px;margin:15px auto;width:350px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+button{padding:10px 20px;margin:5px;border:none;border-radius:10px;background:#4CAF50;color:white;cursor:pointer;font-size:16px;}
+</style>
+</head>
+<body>
+
+<h1>Chémia – Disperzné sústavy</h1>
+<h2>Test</h2>
+<p id="question"></p>
+<button onclick="checkAnswer('a')">A</button>
+<button onclick="checkAnswer('b')">B</button>
+<button onclick="checkAnswer('c')">C</button>
+<p id="result"></p>
+
+<div class="card">
+<button onclick="goBack()">← Späť na Chémia</button>
+</div>
+
+<script>
+// Пример теста
+let q={question:"Ktorá zložka je disperzná fáza?", a:"Voda", b:"Oleje", c:"Vzduch", correct:"b"};
+document.getElementById("question").innerText=q.question;
+function checkAnswer(ans){document.getElementById("result").innerText=ans===q.correct?"✅ Správne":"❌ Nesprávne";}
+function goBack(){window.location.href="chemistry.html";}
+</script>
+
+</body>
+</html>
