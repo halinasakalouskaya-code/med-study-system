@@ -30,12 +30,22 @@ button{
 h2{
   color:#2c3e50;
 }
+a{
+  color:#2c3e50;
+  text-decoration:none;
+}
 </style>
 </head>
 <body>
 
 <h1>🧪 Chémia</h1>
-<p>Tu môžeš robiť testy a opakovať materiál.</p>
+<p>Tu môžeš učiť sa pomocou testov, kartičiek a študijných materiálov.</p>
+
+<!-- Карточки -->
+<div class="card">
+<h2>Kartičky</h2>
+<button onclick="showFlashcards()">Spusti kartičky</button>
+</div>
 
 <!-- Тест -->
 <div class="card">
@@ -47,13 +57,17 @@ h2{
 <p id="result"></p>
 </div>
 
-<!-- Карточки -->
+<!-- Материалы -->
 <div class="card">
-<h2>Kartičky</h2>
-<button onclick="showFlashcards()">Spusti kartičky</button>
+<h2>Materiály</h2>
+<ul>
+  <li><a href="docs/lecture1.pdf" target="_blank">Koncepty prednášky 1</a></li>
+  <li><a href="docs/book1.pdf" target="_blank">Učebnica</a></li>
+  <li><a href="docs/image1.jpg" target="_blank">Obrázok preparátu</a></li>
+</ul>
 </div>
 
-<!-- Кнопка возврата на главную -->
+<!-- Вернуться на главную -->
 <div class="card">
 <button onclick="goBack()">← Späť na hlavnú stránku</button>
 </div>
@@ -67,7 +81,6 @@ let q = {
   c: "O2",
   correct: "b"
 };
-
 document.getElementById("question").innerText = q.question;
 
 function checkAnswer(ans){
@@ -75,13 +88,12 @@ function checkAnswer(ans){
     ans === q.correct ? "✅ Správne" : "❌ Nesprávne";
 }
 
-// Карточки
+// Пример карточек
 let cards = [
   {q: "Vodík", a: "H"},
   {q: "Kyslík", a: "O"},
   {q: "Oxid uhličitý", a: "CO2"}
 ];
-
 let i = 0;
 
 function showFlashcards(){
