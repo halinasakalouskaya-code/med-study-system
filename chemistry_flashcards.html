@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chémia – Kartičky</title>
+<style>
+body{font-family:Arial;text-align:center;padding:30px;background:#f0f4f8;}
+.card{background:white;padding:20px;margin:15px auto;width:350px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+button{padding:10px 20px;margin:5px;border:none;border-radius:10px;background:#4CAF50;color:white;cursor:pointer;font-size:16px;width:250px;}
+ul{list-style:none;padding:0;}
+li{margin:10px 0;}
+</style>
+</head>
+<body>
+
+<h1>Chémia – Kartičky</h1>
+<p>Vyber tému:</p>
+
+<ul>
+  <li><button onclick="window.location.href='chemistry_flashcards_disperzne.html'">1. Disperzné sústavy</button></li>
+  <li><button onclick="window.location.href='chemistry_flashcards_kinetika.html'">2. Kinetika, redox reakcie</button></li>
+</ul>
+
+<div class="card">
+  <button onclick="goBack()">← Späť na Chémia</button>
+</div>
+
+<script>
+function goBack(){window.location.href="chemistry.html";}
+</script>
+
+</body>
+</html>
