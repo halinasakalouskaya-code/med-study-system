@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chémia – Disperzné sústavy – Kartičky</title>
+<style>
+body{font-family:Arial;text-align:center;padding:30px;background:#f0f4f8;}
+.card{background:white;padding:20px;margin:15px auto;width:350px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+button{padding:10px 20px;margin:5px;border:none;border-radius:10px;background:#4CAF50;color:white;cursor:pointer;font-size:16px;}
+</style>
+</head>
+<body>
+
+<h1>Chémia – Disperzné sústavy</h1>
+<h2>Kartičky</h2>
+<button onclick="showFlashcards()">Spusti kartičky</button>
+
+<div class="card">
+<button onclick="goBack()">← Späť na Chémia</button>
+</div>
+
+<script>
+// Карточки
+let cards = [
+  {q:"Čo je disperzná sústava?", a:"Sústava pozostávajúca z dvoch alebo viacerých zložiek, kde jedna je rozptýlená v druhej."},
+  {q:"Príklady disperzných sústav?", a:"Emulzie, peny, aerosóly, suspenzie."}
+];
+let i = 0;
+function showFlashcards(){
+  if(cards.length === 0) return;
+  document.body.innerHTML = "<h1>"+cards[i].q+"</h1><button onclick='showAnswer()'>Ukáž odpoveď</button>";
+}
+function showAnswer(){
+  document.body.innerHTML = "<h1>"+cards[i].a+"</h1><button onclick='nextCard()'>Ďalšia</button>";
+}
+function nextCard(){
+  i=(i+1)%cards.length;
+  showFlashcards();
+}
+
+// Кнопка назад
+function goBack(){window.location.href="chemistry.html";}
+</script>
+
+</body>
+</html>
