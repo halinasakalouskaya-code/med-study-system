@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chémia</title>
+<style>
+body{
+  font-family:Arial;
+  background:#f0f4f8;
+  text-align:center;
+  padding:30px;
+}
+.card{
+  background:white;
+  padding:20px;
+  margin:15px auto;
+  width:350px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+button{
+  padding:10px 20px;
+  margin:5px;
+  border:none;
+  border-radius:10px;
+  background:#4CAF50;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+}
+h2{
+  color:#2c3e50;
+}
+</style>
+</head>
+<body>
+
+<h1>🧪 Chémia</h1>
+<p>Tu môžeš robiť testy a opakovať materiál.</p>
+
+<!-- Тест -->
+<div class="card">
+<h2>Test</h2>
+<p id="question"></p>
+<button onclick="checkAnswer('a')">A</button>
+<button onclick="checkAnswer('b')">B</button>
+<button onclick="checkAnswer('c')">C</button>
+<p id="result"></p>
+</div>
+
+<!-- Карточки -->
+<div class="card">
+<h2>Kartičky</h2>
+<button onclick="showFlashcards()">Spusti kartičky</button>
+</div>
+
+<!-- Кнопка возврата на главную -->
+<div class="card">
+<button onclick="goBack()">← Späť na hlavnú stránku</button>
+</div>
+
+<script>
+// Пример теста
+let q = {
+  question: "Aký je chemický vzorec vody?",
+  a: "CO2",
+  b: "H2O",
+  c: "O2",
+  correct: "b"
+};
+
+document.getElementById("question").innerText = q.question;
+
+function checkAnswer(ans){
+  document.getElementById("result").innerText = 
+    ans === q.correct ? "✅ Správne" : "❌ Nesprávne";
+}
+
+// Карточки
+let cards = [
+  {q: "Vodík", a: "H"},
+  {q: "Kyslík", a: "O"},
+  {q: "Oxid uhličitý", a: "CO2"}
+];
+
+let i = 0;
+
+function showFlashcards(){
+  if(cards.length === 0) return;
+  document.body.innerHTML = "<h1>"+cards[i].q+"</h1><button onclick='showAnswer()'>Ukáž odpoveď</button>";
+}
+
+function showAnswer(){
+  document.body.innerHTML = "<h1>"+cards[i].a+"</h1><button onclick='nextCard()'>Ďalšia</button>";
+}
+
+function nextCard(){
+  i = (i+1)%cards.length;
+  showFlashcards();
+}
+
+// Вернуться на главную
+function goBack(){
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
