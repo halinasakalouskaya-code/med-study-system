@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Histológia</title>
+<style>
+body{
+  font-family:Arial;
+  background:#f0f4f8;
+  text-align:center;
+  padding:30px;
+}
+.card{
+  background:white;
+  padding:20px;
+  margin:15px auto;
+  width:350px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+button{
+  padding:15px 30px;
+  margin:10px;
+  border:none;
+  border-radius:10px;
+  background:#4CAF50;
+  color:white;
+  cursor:pointer;
+  font-size:18px;
+  width:200px;
+}
+h2{
+  color:#2c3e50;
+}
+</style>
+</head>
+<body>
+
+<h1>🔬 Histológia</h1>
+<p>Tu môžeš učiť sa pomocou testov, kartičiek a študijných materiálov.</p>
+
+<div class="card">
+<button onclick="alert('Tu budú kartičky podľa tém')">Kartičky</button>
+<button onclick="alert('Tu budú testy podľa tém')">Testy</button>
+<button onclick="alert('Tu budú materiály podľa kategórií')">Materiály</button>
+</div>
+
+<div class="card">
+<button onclick="goBack()">← Späť na hlavnú stránku</button>
+</div>
+
+<script>
+function goBack(){
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
