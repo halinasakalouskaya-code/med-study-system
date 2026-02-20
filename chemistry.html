@@ -18,25 +18,18 @@ body{
   box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 button{
-  padding:10px 20px;
-  margin:5px;
+  padding:15px 30px;
+  margin:10px;
   border:none;
   border-radius:10px;
   background:#4CAF50;
   color:white;
   cursor:pointer;
-  font-size:16px;
+  font-size:18px;
+  width:200px;
 }
 h2{
   color:#2c3e50;
-}
-a{
-  color:#2c3e50;
-  text-decoration:none;
-}
-ul{
-  text-align:left;
-  padding-left:50px;
 }
 </style>
 </head>
@@ -45,46 +38,11 @@ ul{
 <h1>🧪 Chémia</h1>
 <p>Tu môžeš učiť sa pomocou testov, kartičiek a študijných materiálov.</p>
 
-<!-- Kartičky -->
+<!-- Кнопки -->
 <div class="card">
-<h2>Kartičky</h2>
-<ul>
-  <li><a href="chemistry_flashcards_topic1.html">Téma 1</a></li>
-  <li><a href="chemistry_flashcards_topic2.html">Téma 2</a></li>
-  <li><a href="chemistry_flashcards_topic3.html">Téma 3</a></li>
-</ul>
-</div>
-
-<!-- Testy -->
-<div class="card">
-<h2>Testy</h2>
-<ul>
-  <li><a href="chemistry_tests_topic1.html">Téma 1</a></li>
-  <li><a href="chemistry_tests_topic2.html">Téma 2</a></li>
-  <li><a href="chemistry_tests_topic3.html">Téma 3</a></li>
-</ul>
-</div>
-
-<!-- Materiály -->
-<div class="card">
-<h2>Materiály</h2>
-<h3>Knihy</h3>
-<ul>
-  <li><a href="docs/book1.pdf" target="_blank">Učebnica 1</a></li>
-  <li><a href="docs/book2.pdf" target="_blank">Učebnica 2</a></li>
-</ul>
-
-<h3>Koncepty</h3>
-<ul>
-  <li><a href="docs/lecture1.pdf" target="_blank">Koncept prednášky 1</a></li>
-  <li><a href="docs/lecture2.pdf" target="_blank">Koncept prednášky 2</a></li>
-</ul>
-
-<h3>Doplnkové materiály</h3>
-<ul>
-  <li><a href="docs/image1.jpg" target="_blank">Obrázok preparátu</a></li>
-  <li><a href="docs/additional.pdf" target="_blank">Doplnkový materiál</a></li>
-</ul>
+<button onclick="alert('Tu budú kartičky podľa tém')">Kartičky</button>
+<button onclick="alert('Tu budú testy podľa tém')">Testy</button>
+<button onclick="alert('Tu budú materiály podľa kategórií')">Materiály</button>
 </div>
 
 <!-- Вернуться на главную -->
@@ -93,7 +51,7 @@ ul{
 </div>
 
 <script>
-// Вернуться на главную
+// Возврат на главную
 function goBack(){
   window.location.href = "index.html";
 }
