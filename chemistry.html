@@ -34,6 +34,10 @@ a{
   color:#2c3e50;
   text-decoration:none;
 }
+ul{
+  text-align:left;
+  padding-left:50px;
+}
 </style>
 </head>
 <body>
@@ -41,29 +45,45 @@ a{
 <h1>🧪 Chémia</h1>
 <p>Tu môžeš učiť sa pomocou testov, kartičiek a študijných materiálov.</p>
 
-<!-- Карточки -->
+<!-- Kartičky -->
 <div class="card">
 <h2>Kartičky</h2>
-<button onclick="showFlashcards()">Spusti kartičky</button>
+<ul>
+  <li><a href="chemistry_flashcards_topic1.html">Téma 1</a></li>
+  <li><a href="chemistry_flashcards_topic2.html">Téma 2</a></li>
+  <li><a href="chemistry_flashcards_topic3.html">Téma 3</a></li>
+</ul>
 </div>
 
-<!-- Тест -->
+<!-- Testy -->
 <div class="card">
-<h2>Test</h2>
-<p id="question"></p>
-<button onclick="checkAnswer('a')">A</button>
-<button onclick="checkAnswer('b')">B</button>
-<button onclick="checkAnswer('c')">C</button>
-<p id="result"></p>
+<h2>Testy</h2>
+<ul>
+  <li><a href="chemistry_tests_topic1.html">Téma 1</a></li>
+  <li><a href="chemistry_tests_topic2.html">Téma 2</a></li>
+  <li><a href="chemistry_tests_topic3.html">Téma 3</a></li>
+</ul>
 </div>
 
-<!-- Материалы -->
+<!-- Materiály -->
 <div class="card">
 <h2>Materiály</h2>
+<h3>Knihy</h3>
 <ul>
-  <li><a href="docs/lecture1.pdf" target="_blank">Koncepty prednášky 1</a></li>
-  <li><a href="docs/book1.pdf" target="_blank">Učebnica</a></li>
+  <li><a href="docs/book1.pdf" target="_blank">Učebnica 1</a></li>
+  <li><a href="docs/book2.pdf" target="_blank">Učebnica 2</a></li>
+</ul>
+
+<h3>Koncepty</h3>
+<ul>
+  <li><a href="docs/lecture1.pdf" target="_blank">Koncept prednášky 1</a></li>
+  <li><a href="docs/lecture2.pdf" target="_blank">Koncept prednášky 2</a></li>
+</ul>
+
+<h3>Doplnkové materiály</h3>
+<ul>
   <li><a href="docs/image1.jpg" target="_blank">Obrázok preparátu</a></li>
+  <li><a href="docs/additional.pdf" target="_blank">Doplnkový materiál</a></li>
 </ul>
 </div>
 
@@ -73,43 +93,6 @@ a{
 </div>
 
 <script>
-// Пример теста
-let q = {
-  question: "Aký je chemický vzorec vody?",
-  a: "CO2",
-  b: "H2O",
-  c: "O2",
-  correct: "b"
-};
-document.getElementById("question").innerText = q.question;
-
-function checkAnswer(ans){
-  document.getElementById("result").innerText = 
-    ans === q.correct ? "✅ Správne" : "❌ Nesprávne";
-}
-
-// Пример карточек
-let cards = [
-  {q: "Vodík", a: "H"},
-  {q: "Kyslík", a: "O"},
-  {q: "Oxid uhličitý", a: "CO2"}
-];
-let i = 0;
-
-function showFlashcards(){
-  if(cards.length === 0) return;
-  document.body.innerHTML = "<h1>"+cards[i].q+"</h1><button onclick='showAnswer()'>Ukáž odpoveď</button>";
-}
-
-function showAnswer(){
-  document.body.innerHTML = "<h1>"+cards[i].a+"</h1><button onclick='nextCard()'>Ďalšia</button>";
-}
-
-function nextCard(){
-  i = (i+1)%cards.length;
-  showFlashcards();
-}
-
 // Вернуться на главную
 function goBack(){
   window.location.href = "index.html";
